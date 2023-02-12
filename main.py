@@ -35,6 +35,7 @@ async def main():
   <body>
     <h2>Accedeix a la base de dades</h2>
     <button class="button" onclick="location.href='http://127.0.0.1:8000/ofertasdb'">Mostrar dades</button>
+    <button class="button" onclick="location.href='http://127.0.0.1:8000/ofertasdb/html'">Accedeix a la Web</button>
   </body>
 </html>
     """
