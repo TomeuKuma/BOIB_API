@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/python">
+      import requests
+      import pymongo
+
+      client = pymongo.MongoClient("mongodb+srv://<username>:<password>@cluster0.mongodb.net/test?retryWrites=true&w=majority")
+      db = client["database_name"]
+      collection = db["collection_name"]
+
+      data = list(collection.find({}, {"Fecha": 1, "Entidad": 1, "Resolución": 1}))
+    </script>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Entidad</th>
+          <th>Resolución</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script type="text/python">
+          for item in data:
+            document.write(f"<tr><td>{item['Fecha']}</td><td>{item['Entidad']}</td><td>{item['Resolución']}</td></tr>")
+        </script>
+      </tbody>
+    </table>
+  </body>
+</html>
