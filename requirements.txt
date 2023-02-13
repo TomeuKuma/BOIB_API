@@ -5,3 +5,5 @@ bcrypt
 pymongo
 python-multipart
 Jinja2
+pydantic
+requests
