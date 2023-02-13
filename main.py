@@ -6,11 +6,6 @@ app = FastAPI()
 app.include_router(ofertas_db.router)
 
 
-# Url local: http://127.0.0.1:8000
-#@app.get("/")
-#async def root():
-#    return "Ir a http://127.0.0.1:8000/ofertasdb"
-
 @app.get("/")
 async def main():
     content = """
