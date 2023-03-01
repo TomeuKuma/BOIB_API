@@ -22,7 +22,7 @@ async def get_data():
 
 @router.get("/html")
 async def render_items():
-    datos = db_client[COLLECTION_NAME].find().sort("URL_id", DESCENDING).limit(100)
+    datos = db_client[COLLECTION_NAME].find().sort("URL_id", DESCENDING).limit(200)
     template = Template(best_html)
     html = template.render(datos=datos)
     return HTMLResponse(html)
